@@ -1,6 +1,14 @@
 var connection = require("../config/connection.js");
 
-// Helper function to convert object key/value pairs to SQL syntax
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+    return arr.toString();
+  }
+
 function objToSql(ob) {
     var arr = [];
   
@@ -32,10 +40,10 @@ var orm = {
         queryString += " (";
         queryString += cols.toString();
         queryString += ") VALUES (";
-        queryString += vals.toString();
+        queryString += printQuestionMarks(vals.length);
         queryString += "); ";
         
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
             }
@@ -50,7 +58,7 @@ var orm = {
         queryString += " WHERE ";
         queryString += condition;
 
-        connection.query(querySTring, function(err, result) {
+        connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
             }
