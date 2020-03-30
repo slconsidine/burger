@@ -16,10 +16,7 @@ function objToSql(ob) {
       var value = ob[key];
 
       if (Object.hasOwnProperty.call(ob, key)) {
-        if (typeof value === "string" && value.indexOf(" ") >= 0) {
-          value = "'" + value + "'";
-        }
-        arr.push(key + "=" + value);
+        arr.push(key + "=" + 1);
       }
     }
     return arr.toString();
@@ -57,6 +54,8 @@ var orm = {
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
+
+        console.log(queryString);
 
         connection.query(queryString, function(err, result) {
             if (err) {
