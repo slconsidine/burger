@@ -4,7 +4,7 @@
   <div class="grid">
     <div class="row">
       <div class="col-sm-6 text-center">
-        <h2>Ordered Burgers</h2>
+        <h2>Order Up!</h2>
           <ul>
             {{#each burgers}}
               {{#unless devoured}}
@@ -24,15 +24,19 @@
           </ul>
       </div>
     </div>
+    <div class="text-center">
+      <img src="/assets/img/burger.png">  
+    </div>
+
     <div class="row">
       <div class="col-12 text-center">
-        <h2>Add A Burger Order</h2>
+        <h2>May I take your order?</h2>
           <form class="create-form">
             <div class="form-group">
               <label for="newBurger">Burger Order:</label>
               <input type="text" id="new-order" name="burger_name">
+              <button type="submit" id="newBurger">Add Order</button>
             </div>
-            <button type="submit" id="newBurger">Add Order</button>
           </form>
       </div>
     </div>

@@ -1,3 +1,17 @@
 body {
     background-color: #fcd703;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+}
+
+img {
+    height: 30%;
+    width: 30%;
 }
