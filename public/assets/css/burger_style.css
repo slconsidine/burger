@@ -3,6 +3,10 @@ body {
     font-family: 'Fjalla One', sans-serif;
 }
 
+h1 {
+    padding-top: 10px;
+}
+
 ul {
     list-style: none;
 }
